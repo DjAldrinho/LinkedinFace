@@ -27,9 +27,9 @@ class LinkedinController extends Controller
                 $linkedin->save();
             }
 
-            return response()->json(['msj' => 'Token guardado exitosamente!', 'linkedin' => $linkedin]);
+            return response()->json('Token guardado exitosamente!');
         } catch (Exception $e) {
-            return response()->json($e->getMessage(), 500);
+            return response()->json($e->getMessage());
         }
     }
 
