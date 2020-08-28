@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Log;
 
 class LinkedinController extends Controller
 {
+
+    public function all()
+    {
+        return Linkedin::all();
+    }
+
     public function auth(Request $request)
     {
         try {

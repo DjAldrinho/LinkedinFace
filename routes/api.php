@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'linkedin'], function () {
+    Route::get('all', 'LinkedinController@all');
     Route::get('infoAccess/{userId}', 'LinkedinController@infoAccess');
     Route::post('auth', 'LinkedinController@auth');
     Route::post('sharePost', 'LinkedinController@sharePost');
