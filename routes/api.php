@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'linkedin', 'middleware' => ['cors']], function () {
-    Route::get('all', 'LinkedinController@all');
+Route::group(['prefix' => 'linkedin'], function () {
+    Route::get('all', 'LinkedinController@all')->middleware(['cors']);
     Route::get('infoAccess/{userId}', 'LinkedinController@infoAccess');
-    Route::post('auth', 'LinkedinController@auth');
+    Route::post('auth', 'LinkedinController@auth')->middleware(['cors']);
     Route::post('sharePost', 'LinkedinController@sharePost');
 });
