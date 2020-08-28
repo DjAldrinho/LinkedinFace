@@ -16,9 +16,9 @@ class CreateLinkedinApi extends Migration
         Schema::create('linkedin_api', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id');
-            $table->string('auth_code')->nullable();
-            $table->string('auth_token')->nullable();
-            $table->string('linkedin_id')->nullable();
+            $table->text('auth_code')->nullable();
+            $table->text('auth_token')->nullable();
+            $table->text('linkedin_id')->nullable();
             $table->timestamps();
         });
     }

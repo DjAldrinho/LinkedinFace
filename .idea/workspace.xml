@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bd1a31e5-157b-4832-8c79-0deb056b3744" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LinkedinFaceAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LinkedinFaceAPI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LinkedinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LinkedinController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_27_035939_create_linkedin_api.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_27_035939_create_linkedin_api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +14,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -151,7 +153,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598492301748</updated>
-      <workItem from="1598492303274" duration="4692000" />
+      <workItem from="1598492303274" duration="6266000" />
+      <workItem from="1598534392255" duration="15983000" />
     </task>
     <servers />
   </component>
@@ -159,9 +162,17 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="753" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1598559690790">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="753" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1598559690790" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1598500183570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598500183570" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598566301817">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598566301817" />
   </component>
 </project>
