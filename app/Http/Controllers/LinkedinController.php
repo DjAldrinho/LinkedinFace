@@ -33,7 +33,7 @@ class LinkedinController extends Controller
                 $linkedin->save();
             }
 
-            return response()->json('Token guardado exitosamente!');
+            return response()->json(['msg' => 'Token guardado exitosamente!', 'show' => true]);
         } catch (Exception $e) {
             return response()->json($e->getMessage());
         }
