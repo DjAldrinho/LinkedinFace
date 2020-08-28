@@ -33,6 +33,45 @@ class LinkedinController extends Controller
         }
     }
 
+    public function sharePost(Request $request)
+    {
+        $link = env('APP_URL');
+        $access_token = $request->linkedin['authToken'];
+        $linkedin_id = $request->linkedin['linkedinID'];
+        $body = new \stdClass();
+        $body->content = new \stdClass();
+        $body->content->contentEntities[0] = new \stdClass();
+        $body->text = new \stdClass();
+        $body->content->contentEntities[0]->thumbnails[0] = new \stdClass();
+        $body->content->contentEntities[0]->entityLocation = $link;
+        $body->content->contentEntities[0]->thumbnails[0]->resolvedUrl = 'https://www.gettyimages.es/gi-resources/images/500px/983801190.jpg';
+        $body->content->title = 'Prueba';
+        $body->owner = 'urn:li:person:' . $linkedin_id;
+        $body->text->text = 'Resumen del Post. Prueba desde API';
+        $body_json = json_encode($body, true);
+
+        try {
+            $client = new Client(['base_uri' => 'https://api.linkedin.com']);
+            $response = $client->request('POST', '/v2/shares', [
+                'headers' => [
+                    "Authorization" => "Bearer " . $access_token,
+                    "Content-Type" => "application/json",
+                    "x-li-format" => "json"
+                ],
+                'body' => $body_json,
+            ]);
+
+            if ($response->getStatusCode() !== 201) {
+                LOG::error('Error: ' . $response->getLastBody()->errors[0]->message);
+                return response()->json('Error: ' . $response->getLastBody()->errors[0]->message);
+            }
+
+            return response()->json('Post is shared on LinkedIn successfully.', 201);
+        } catch (Exception $e) {
+            return response()->json($e->getMessage(), 500);
+        }
+    }
+
     public function infoAccess(Request $request)
     {
 
@@ -40,7 +79,11 @@ class LinkedinController extends Controller
             ->whereRaw('user_id = ? AND created_at >= NOW() - INTERVAL \'60 days\'', [$request->userId])
             ->limit(1)->get();
 
-        return response()->json(['linkedin' => $infoAccess[0]]);
+        if (count($infoAccess) > 0) {
+            $infoAccess = $infoAccess[0];
+        }
+
+        return response()->json(['linkedin' => $infoAccess]);
     }
 
 
